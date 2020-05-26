@@ -9,7 +9,6 @@ public class DragNavHandler : MonoBehaviour
     private float vertical = 0;
     private Vector3 initialMousePos;
     private Vector3 currentMousePos;
-    [SerializeField] private bool _invertInput;
     [SerializeField] private float _dragSpeed = .1f;
 
     private void Update()
@@ -22,7 +21,7 @@ public class DragNavHandler : MonoBehaviour
     {
         transform.rotation = Quaternion.identity;
         transform.Rotate(Vector3.up, horizontal, Space.World);
-        transform.Rotate(transform.right, vertical, Space.World);
+        transform.Rotate(-transform.right, vertical, Space.World);
     }
 
     // private void RotationUpdate()
@@ -44,7 +43,6 @@ public class DragNavHandler : MonoBehaviour
         if (!Input.GetKey(KeyCode.Mouse0)) return;
         currentMousePos = Input.mousePosition;
         Vector2 drag = initialMousePos - currentMousePos;
-        if (_invertInput) drag = -drag;
         initialMousePos = currentMousePos;
 
         horizontal += drag.x * _dragSpeed;

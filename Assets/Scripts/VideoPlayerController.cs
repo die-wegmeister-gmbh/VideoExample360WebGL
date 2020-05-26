@@ -11,6 +11,6 @@ public class VideoPlayerController : MonoBehaviour
     private void Start()
     {
         videoPlayer = GetComponent<VideoPlayer>();
-        videoPlayer.url = Path.Combine(Application.streamingAssetsPath, "WebGLTestVideo.mp4");
+        videoPlayer.url = GameManagerDataSO._GameManagerDataSO.FilePath;
     }
 }

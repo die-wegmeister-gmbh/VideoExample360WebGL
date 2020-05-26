@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _invertInput: 0
-  _dragSpeed: 1
+  _dragSpeed: 0.1
 --- !u!1 &1423007362
 GameObject:
   m_ObjectHideFlags: 0
