@@ -66,4 +66,6 @@ public class GameManagerDataSO : ScriptableObject
     {
         Debug.Log(FilePath);
     }
+
+    public void Init() => _gameManagerDataSO = this;
 }
